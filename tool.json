@@ -1,0 +1,10 @@
+{
+  "id": "c14",
+  "slug": "live-recorder",
+  "name": "自家直播自动录制存档",
+  "version": "1.0.3-campfire.1",
+  "repo": "campfire-code/live-recorder",
+  "license": "Apache-2.0",
+  "delivery": "mirror",
+  "upstream": { "repo": "ihmily/StreamCap", "license": "Apache-2.0", "tag": "v1.0.3" }
+}

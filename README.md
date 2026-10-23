@@ -1,3 +1,63 @@
+# 自家直播自动录制存档（StreamCap）
+
+> 篝火出品 · 收录于篝火 App 应用区 · 基于开源项目 [ihmily/StreamCap](https://github.com/ihmily/StreamCap)（Apache-2.0）
+
+> [!WARNING]
+> **请只录制你有权录制的直播**：比如你自己或你所在团队的直播间、已取得主播或平台书面许可的直播。未经许可录制、保存、传播他人直播内容，可能违反平台规则并侵犯他人的著作权和肖像权。本工具仅供自家直播的回放存档与切片素材整理，使用后果由使用者自行承担。
+
+监控直播间状态，**开播就自动录制**，录完可自动转成 mp4，方便自家直播的回放存档和后期切片。
+
+## 下载
+
+到 [Releases](https://github.com/campfire-code/live-recorder/releases/latest) 下载：
+
+| 电脑 | 文件 |
+|---|---|
+| Windows 10 / 11（64 位） | `live-recorder_版本号_StreamCap_1.0.3_Win_x64.zip`，解压后运行 `StreamCap.exe` |
+| Mac（Apple 芯片：M1 / M2 / M3 / M4） | `live-recorder_版本号_StreamCap_1.0.3_mac_arm64.dmg` |
+
+- 安装包来自上游官方发布，篝火没有修改，附 `SHA256SUMS.txt` 可核对。
+- 上游同时发布了不带 FFmpeg 的 Windows 版（`_noFF`），本仓库没有转发布；上游的打包流程（`.github/workflows/build-desktop.yml`）里，我们转发布的这几个包会带上 FFmpeg。
+- 上游没有提供 Intel 芯片 Mac 的版本。Linux 请按下方上游文档用源码以网页方式运行。
+
+## 怎么用
+
+1. 解压 / 安装后打开。第一次启动较慢，等界面加载完成。
+2. 添加你自己有权录制的直播间地址，开启循环监控（也可设置只在某个时间段监控）。
+3. 开播后自动开始录制；录制结束后不要马上打开文件，转码需要一点时间。
+4. 在设置里可选录制格式（ts、flv、mkv、mov、mp4、mp3、m4a 等）、保存位置和开播消息推送。
+
+**说明**
+- 软件界面以上游语言为准，请先在设置里确认是否有中文。
+- 部分平台需要登录 Cookie 才能录制，具体请看上游 [Wiki](https://github.com/ihmily/StreamCap/wiki/%E4%B8%BB%E9%A1%B5)。
+- Windows 提示不安全时，上游说明可选择仍然运行；Mac 提示无法验证开发者时，到「系统设置 → 隐私与安全性」点「仍要打开」。
+- 视频文件占磁盘很快，请预留足够空间。
+
+## 验收用例
+
+| 操作 | 应得到 |
+|---|---|
+| 解压（或安装）后打开软件 | 能进入主界面，不提示缺少 FFmpeg |
+| 添加一个正在直播、且你有权录制的直播间，开启监控 | 列表显示录制中，保存目录里出现视频文件 |
+| 停止录制，等待转码结束 | 目录里得到可播放的 mp4 |
+
+## FFmpeg 说明
+
+录制和转码依赖 [FFmpeg](https://ffmpeg.org)（LGPL / GPL，由其作者发布）。上游的打包流程会下载现成的 FFmpeg 一起打进安装包：Windows 来自 gyan.dev，macOS 来自 evermeet.cx（见上游 `scripts/download_ffmpeg.py`）。如果打开后仍提示缺少 FFmpeg，请到 [FFmpeg 官网](https://ffmpeg.org/download.html) 下载并加入系统环境变量。
+
+## 和上游的区别
+
+- 仅新增中文说明与篝火发布流程（`tool.json`、`.github/workflows/release.yml`），软件代码与上游一致，安装包是上游官方发布的原件。
+- 移除了上游用于构建、同步、镜像发布的工作流。
+
+## 归属与许可证
+
+本仓库由**篝火**整理发布，是篝火 App 应用区收录的开源工具之一。软件全部功能与版权归 [ihmily/StreamCap](https://github.com/ihmily/StreamCap) 原作者所有，按 Apache License 2.0 再分发，LICENSE 保留。全部工具目录见 [toolkit-hub](https://github.com/campfire-code/toolkit-hub)。
+
+---
+
+以下为上游原始说明：
+
 <div align="center">
   <img src="./assets/images/logo.svg" alt="StreamCap" />
 </div>
