@@ -1,12 +1,20 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>自家直播自动录制存档</title><style>
-*{box-sizing:border-box}body{margin:0;width:1040px;height:700px;background:#f4f5f7;font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;color:#1d2129;padding:36px}
-.card{background:#fff;border-radius:20px;height:628px;padding:40px 48px;box-shadow:0 2px 14px rgba(0,0,0,.06);position:relative;display:flex;flex-direction:column}
-.brand{position:absolute;right:32px;top:24px;font-size:13px;color:#8a919c}
-h1{margin:0 0 12px;font-size:36px;font-weight:700}
-.desc{font-size:16px;line-height:1.6;color:#4e5560;margin:0 0 22px}
-h2{font-size:15px;color:#ff6a1a;margin:0 0 10px;letter-spacing:1px}
-ol{margin:0;padding:0;list-style:none;counter-reset:n}
-li{counter-increment:n;display:flex;gap:14px;font-size:16px;line-height:1.55;margin-bottom:12px}
-li:before{content:counter(n);flex:none;width:26px;height:26px;border-radius:50%;background:#fff1e8;color:#ff6a1a;font-weight:700;font-size:14px;text-align:center;line-height:26px;margin-top:1px}
-.fmt{margin-top:auto;background:#f4f5f7;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.5;color:#4e5560}.fmt b{color:#1d2129}
-</style><body><div class="card"><div class="brand">篝火出品</div><h1>自家直播自动录制存档</h1><p class="desc">监控直播间状态，开播就自动录制，录完可自动转成 mp4，方便自家直播的回放存档和后期切片。</p><h2>怎么用</h2><ol><li><span>解压 / 安装后打开，第一次启动较慢，等界面加载完成</span></li><li><span>添加你自己有权录制的直播间地址，开启循环监控（也可只在某个时间段监控）</span></li><li><span>开播后自动开始录制；录制结束后等转码完成再打开文件</span></li><li><span>在设置里选录制格式（ts、flv、mkv、mp4、mp3 等）、保存位置和开播消息推送</span></li></ol><div class="fmt"><b>交付形式　</b>桌面软件（Windows 64 位 zip / Mac Apple 芯片 dmg），安装包来自上游官方发布</div></div></body></html>
+*{box-sizing:border-box}body{margin:0;width:1040px;height:700px;font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;color:#1d2129;background:#f5f0fc;position:relative;overflow:hidden}
+.top{position:absolute;left:48px;top:36px;right:48px;display:flex;justify-content:space-between;align-items:flex-end}
+h1{margin:0;font-size:34px;color:#3b0a73}.sub{font-size:15px;color:#5b4a78;margin-top:8px}
+.tag{font-size:13px;color:#7717D3;background:#e9dcfb;border-radius:20px;padding:6px 14px}
+.w{position:absolute;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 34px rgba(60,10,120,.25);border:1px solid #dccbf5}
+.w .b{height:24px;background:#ece2fa;display:flex;gap:5px;align-items:center;padding:0 10px}.w .b i{width:8px;height:8px;border-radius:50%;background:#bda2e6}
+.w img{display:block;width:100%}
+.w1{left:48px;top:122px;width:520px;height:330px}.w2{left:380px;top:230px;width:520px;height:330px;z-index:2}
+.lab{position:absolute;font-size:12px;color:#fff;background:#7717D3;border-radius:4px;padding:3px 8px;z-index:3}
+.steps{position:absolute;left:48px;right:48px;bottom:30px;display:flex;gap:14px}
+.s{flex:1;background:#fff;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5;border-top:3px solid #7717D3;box-shadow:0 2px 10px rgba(60,10,120,.08)}
+.s b{display:block;color:#7717D3;font-size:12px;margin-bottom:3px}
+.warn{position:absolute;right:48px;top:122px;width:100px}
+</style><body>
+<div class="top"><div><h1>自家直播自动录制存档</h1><div class="sub">开播就自动录制，录完转成 mp4，自家直播回放留底、方便切片</div></div><div class="tag">界面为简体中文 · 仅录制有权录制的直播</div></div>
+<div class="w w1"><div class="b"><i></i><i></i><i></i></div><img src="ui-home-zh.png"></div><div class="lab" style="left:62px;top:108px">主页</div>
+<div class="w w2"><div class="b"><i></i><i></i><i></i></div><img src="ui-list-zh.png"></div><div class="lab" style="left:392px;top:216px">录制列表</div>
+<div class="steps"><div class="s"><b>第 1 步</b>解压或安装后打开，等界面加载完成</div><div class="s"><b>第 2 步</b>录制页点「＋」添加有权录制的直播间地址</div><div class="s"><b>第 3 步</b>开启循环监控，开播自动录制</div><div class="s"><b>第 4 步</b>在设置里选格式、保存位置，转码结束取 mp4</div></div>
+</body></html>
